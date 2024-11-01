@@ -3,11 +3,11 @@ import sys
 m = int(input())
 s = set()
 for _ in range(m):
-    cal = sys.stdin.readline().strip()
+    cal = sys.stdin.readline().strip() # 시간초과 문제 해결
     if 'add' in cal:
         s.add(int(cal[4:]))
     elif 'remove' in cal:
-        s.discard(int(cal[7:]))
+        s.discard(int(cal[7:])) # remove -> discard : keyError 해결
     elif 'check' in cal:
         if int(cal[6:]) in s:
             print(1)

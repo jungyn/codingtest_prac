@@ -1,16 +1,15 @@
-# 재귀함수 X
+# 리스트 사용 X
 n = int(input())
-fibol = []
 
-def fibo(x):
-    for i in range(x+1):
-        if i == 0:
-            num = 0
-        elif i == 1 or i == 2:
-            num = 1
-        else:
-            num = fibol[-1] + fibol[-2]
-        fibol.append(num)
+def fibo(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        a, b = 0, 1
+        for _ in range(2, n+1):
+            a, b = b, a+b
+        return b
 
-fibo(n)
-print(fibol[-1])
+print(fibo(n))

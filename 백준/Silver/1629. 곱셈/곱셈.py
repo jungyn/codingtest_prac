@@ -1,4 +1,4 @@
-# 분할정복
+# 분할정복(최적화)
 a, b, c = map(int, input().split())
 
 def divide(base, power, div):
@@ -9,6 +9,6 @@ def divide(base, power, div):
         return (temp * temp) % div 
     else:
         temp = divide(base, power // 2, div)
-        return (temp * divide(base, power // 2 + 1, div) % div)
+        return (temp * temp * base) % div
 
 print(divide(a, b, c))

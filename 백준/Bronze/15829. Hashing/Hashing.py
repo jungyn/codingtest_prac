@@ -8,4 +8,4 @@ for i in alpha:
 
 for n in range(L):
     answer += alist[n] * 31**n
-print(answer)
+print(answer % 1234567891)
